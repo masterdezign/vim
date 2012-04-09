@@ -2,6 +2,11 @@
 set t_Co=256 
 
 
+" Immediate exit CTRL+A
+nmap <C-A> :qa!<CR>
+imap <C-A> <C-O><C-A>
+
+
 " Lets hide modified buffers
 set hidden
 
@@ -251,8 +256,10 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Moving tab using CTRL+ the arrows
-map <C-right> :bn<CR>
-map <C-left> :bp<CR>
+map <C-up> :tabnext<CR>
+map <C-down> :tabprevious<CR>
+nmap <C-right> :bn<CR>
+nmap <C-left> :bp<CR>
 
 " Tab configuration
 map <leader>tn :tabnew! %<cr>
