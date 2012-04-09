@@ -6,6 +6,11 @@ set t_Co=256
 set hidden
 
 
+" Emacs-style Ctrl+L
+nmap <C-L> zz
+imap <C-L> <C-O><C-L>
+
+
 " Save file if modified
 nmap <F2> :update<CR>
 " Return to insert mode after saving (using <C-O>)
