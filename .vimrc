@@ -2,6 +2,10 @@
 set t_Co=256 
 
 
+" Lets hide modified buffers
+set hidden
+
+
 " Save file if modified
 nmap <F2> :update<CR>
 " Return to insert mode after saving (using <C-O>)
