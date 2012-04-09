@@ -1,4 +1,12 @@
+" Set 256 colors in terminal
 set t_Co=256 
+
+
+" Save file if modified
+nmap <F2> :update<CR>
+" Return to insert mode after saving (using <C-O>)
+imap <F2> <C-O><F2>
+
 
 set nocompatible " be iMproved
 filetype off                   " required!
@@ -436,13 +444,13 @@ nmap <F7> :NERDTree .<CR>
 
 " TagBar Configuration
 let g:tagbar_usearrows=1
-let g:tagbar_width=25
+let g:tagbar_width=30
 nnoremap <leader>l :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FuzzFinder Shorcuts. Using F2 for opening FuzzyFinderTextMate
+" FuzzFinder Shorcuts. Using F4 for opening FuzzyFinderTextMate
 map <leader>f :FufFileWithCurrentBufferDir<CR>
-map <F2> :FufFileWithFullCwd<CR>
+map <F4> :FufFileWithFullCwd<CR>
 map <leader>b :FufBuffer<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
