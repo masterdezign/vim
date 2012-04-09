@@ -425,49 +425,18 @@ autocmd Syntax c,cpp,vim,xml,html,xhtml,js,rb,py,python setlocal foldmethod=manu
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NerdTree and Tagbar using by <F8>
+" NerdTree and Tagbar
 
-function! ToggleNERDTreeAndTagbar()
-    let w:jumpbacktohere = 1
+" Binds F8 to tagbar plugin
+nmap <F8> :TagbarToggle<CR>
 
-    " Detect which plugins are open
-    if exists('t:NERDTreeBufName')
-        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
-    else
-        let nerdtree_open = 0
-    endif
-    let tagbar_open = bufwinnr('__Tagbar__') != -1
+" Opens tree view
+nmap <F7> :NERDTree .<CR>
 
-    " Perform the appropriate action
-    if nerdtree_open && tagbar_open
-        NERDTreeClose
-        TagbarClose
-    elseif nerdtree_open
-        TagbarOpen
-    elseif tagbar_open
-        NERDTree
-    else
-        NERDTree
-        TagbarOpen
-    endif
-
-    " Jump back to the original window
-    for window in range(1, winnr('$'))
-        execute window . 'wincmd w'
-        if exists('w:jumpbacktohere')
-            unlet w:jumpbacktohere
-            break
-        endif
-    endfor
-endfunction
-
-" now you can open NERDTree and Tagbar using F8
-" http://stackoverflow.com/questions/6624043/how-to-open-or-close-nerdtree-and-tagbar-with-leader
-nmap <F8> :call ToggleNERDTreeAndTagbar()<CR>
 
 " TagBar Configuration
 let g:tagbar_usearrows=1
-let g:tagbar_width=30
+let g:tagbar_width=25
 nnoremap <leader>l :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
