@@ -1,3 +1,5 @@
+set t_Co=256 
+
 set nocompatible " be iMproved
 filetype off                   " required!
 
@@ -19,7 +21,7 @@ Bundle 'Conque-Shell'
 Bundle 'L9'
 
 " Utilities
-Bundle 'mhz/vim-matchit.git'
+Bundle 'tsaleh/vim-matchit.git'
 Bundle 'vim-scripts/tComment'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
@@ -44,17 +46,17 @@ Bundle 'vim-scripts/Pydiction'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'vim-scripts/django.vim'
 
-"Javascript "
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'digitaltoad/vim-jade'
+"  "Javascript "
+ Bundle 'kchmck/vim-coffee-script'
+"  Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
-Bundle 'lukaszb/vim-web-indent'
+"  Bundle 'lukaszb/vim-web-indent'
 Bundle 'mattn/zencoding-vim'
 Bundle 'godlygeek/tabular'
-Bundle 'jamescarr/snipmate-nodejs'
+"  Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'lunaru/vim-less'
 "Bundle 'joestelmach/javaScriptLint.vim'
-Bundle 'pangloss/vim-javascript'
+"  Bundle 'pangloss/vim-javascript'
 
 " Syntax checking 
 Bundle 'scrooloose/syntastic'
@@ -314,9 +316,9 @@ noremap <BS> <PageUp>
 set backspace=eol,start,indent
 
 
-"---- PHP executing shortcut --"
-" Execute PHP file being edited with <Shift> + p:
-nnoremap P w:<CR>:!/usr/bin/php5 % <CR>
+"  "---- PHP executing shortcut --"
+"  " Execute PHP file being edited with <Shift> + p:
+"  nnoremap P w:<CR>:!/usr/bin/php5 % <CR>
 
 " This is from : http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
 "
@@ -327,8 +329,8 @@ nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
 " Execute Python file being edited with <Shift> + e:
 nnoremap E w:<CR>:!python % <CR>
 
-" Execute NodeJS file being edited with <Shift> + n:
-nnoremap N w:<CR>:!node %<CR>
+"  " Execute NodeJS file being edited with <Shift> + n:
+"  nnoremap N w:<CR>:!node %<CR>
 
 " Execute javascriptLint on no-JS files like PHP, python, Html with <Shift> + j : 
 command! JavaScriptLintChecker call JavascriptLint()
@@ -391,6 +393,11 @@ autocmd FileType xhtml set ts=2
 autocmd FileType xhtml set sts=2
 autocmd FileType xhtml set textwidth=0
 
+" Ruby (tab width 2 chr)
+autocmd FileType ruby set sw=2
+autocmd FileType ruby set ts=2
+autocmd FileType ruby set sts=2
+
 " CSS (tab width 2 chr, wrap at 79th char)
 autocmd FileType css set sw=2
 autocmd FileType css set ts=2
@@ -402,10 +409,10 @@ autocmd FileType css set sts=2
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" You might also find this useful
-" PHP Generated Code Highlights (HTML & SQL)                                              
-let php_sql_query=1                                                                                        
-let php_htmlInStrings=1
+"  " You might also find this useful
+"  " PHP Generated Code Highlights (HTML & SQL)                                              
+"  let php_sql_query=1                                                                                        
+"  let php_htmlInStrings=1
 
 " Folding
 " auto save folding : http://princ3.wordpress.com/2007/01/26/automaticaly-save-foldings-in-vim/
@@ -414,7 +421,7 @@ au BufWinEnter * silent! loadview
 autocmd BufWinLeave .* mkview
 autocmd BufWinEnter .* silent loadview 
 
-autocmd Syntax c,cpp,vim,xml,html,xhtml,js,php,py,python setlocal foldmethod=manual
+autocmd Syntax c,cpp,vim,xml,html,xhtml,js,rb,py,python setlocal foldmethod=manual
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -551,11 +558,11 @@ autocmd FileType vim set omnifunc=syntaxcomplete#Complete
 
 "from https://github.com/chronon/dot-vim/blob/master/vimrc
 
-" cakephp
-autocmd BufEnter,BufRead {controllers,models,views,plugins,lib}/* set ft=php.cakephp
-autocmd BufEnter,BufRead {Controller,Model,View,Plugin,Lib}/* set ft=php.cakephp
-autocmd FileType php,php.cakephp set commentstring=//\%s
-autocmd FileType html set commentstring=<!--%s-->
+"  " cakephp
+"  autocmd BufEnter,BufRead {controllers,models,views,plugins,lib}/* set ft=php.cakephp
+"  autocmd BufEnter,BufRead {Controller,Model,View,Plugin,Lib}/* set ft=php.cakephp
+"  autocmd FileType php,php.cakephp set commentstring=//\%s
+"  autocmd FileType html set commentstring=<!--%s-->
 
 " http://stackoverflow.com/questions/1747091/how-do-you-use-vims-quickfix-feature
 " autocmd BufWritePost,FileWritePost *.html call JavascriptLint()
