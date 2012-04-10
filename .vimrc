@@ -89,7 +89,7 @@ Bundle "Shougo/neocomplcache"
 
 " Python development
 Bundle 'vim-scripts/Pydiction'
-Bundle 'kevinw/pyflakes-vim'
+" Bundle 'kevinw/pyflakes-vim'
 Bundle 'vim-scripts/django.vim'
 
 "  "Javascript "
@@ -541,7 +541,7 @@ let python_print_as_function=1 " Color 'print' function.
 "--- python formatting help ---
 autocmd BufRead *.py set nosmartindent cindent " cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-let g:pyflakes_use_quickfix = 0 " Disable Pyflakes quickfix
+" let g:pyflakes_use_quickfix = 1 " Enable Pyflakes
 
 " Pep8 from : http://sontek.net/turning-vim-into-a-modern-python-ide#id9
 "
