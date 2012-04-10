@@ -189,7 +189,7 @@ set wrap "Wrap lines
 set so=7            " Set 7 lines to the curors - when moving vertical..
 set ruler           "Always show current position
 set hid             "Change buffer - without saving
-set nohidden
+" set nohidden
 
 " Set backspace config
 set backspace=eol,start,indent
