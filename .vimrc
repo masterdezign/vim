@@ -281,10 +281,10 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Moving tab using CTRL+ the arrows
-map <C-up> :tabnext<CR>
-map <C-down> :tabprevious<CR>
-nmap <C-right> :bn<CR>
-nmap <C-left> :bp<CR>
+map <C-right> :tabnext<CR>
+map <C-left> :tabprevious<CR>
+nmap <C-up> :bn<CR>
+nmap <C-down> :bp<CR>
 
 " Tab configuration
 map <leader>tn :tabnew! %<cr>
