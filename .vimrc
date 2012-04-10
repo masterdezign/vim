@@ -541,7 +541,7 @@ let python_print_as_function=1 " Color 'print' function.
 "--- python formatting help ---
 autocmd BufRead *.py set nosmartindent cindent " cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-" let g:pyflakes_use_quickfix = 1 " Enable Pyflakes
+let g:pyflakes_use_quickfix = 0 " Disable Pyflakes quickfix
 
 " Pep8 from : http://sontek.net/turning-vim-into-a-modern-python-ide#id9
 "
