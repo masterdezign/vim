@@ -27,9 +27,12 @@ imap <C-L> <C-O><C-L>
 :nmap w W
 
 
+" Select words in visual mode with Shift+arrows
+nmap <S-Right> vw
+nmap <S-Left> vb
 " Start visual mode in insert mode
-imap <S-Right> <Esc><Right>v
-imap <S-Left> <Esc>v
+imap <S-Right> <Esc><S-Right>
+imap <S-Left> <Esc><S-Left>
 
 
 " Save file if modified
