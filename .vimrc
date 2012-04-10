@@ -523,7 +523,7 @@ let python_print_as_function=1 " Color 'print' function.
 "" PYTHON auto completion from http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/
 
 "--- python formatting help ---
-autocmd BufRead *.py set cindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd BufRead *.py set nosmartindent cindent " cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 let g:pyflakes_use_quickfix = 1 " Enable Pyflakes
 
