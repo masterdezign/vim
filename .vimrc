@@ -340,10 +340,6 @@ noremap <BS> <PageUp>
 set backspace=eol,start,indent
 
 
-"  "---- PHP executing shortcut --"
-"  " Execute PHP file being edited with <Shift> + p:
-"  nnoremap P w:<CR>:!/usr/bin/php5 % <CR>
-
 " This is from : http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
 "
 
@@ -432,11 +428,6 @@ autocmd FileType css set sts=2
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-"  " You might also find this useful
-"  " PHP Generated Code Highlights (HTML & SQL)                                              
-"  let php_sql_query=1                                                                                        
-"  let php_htmlInStrings=1
 
 " Folding
 " auto save folding : http://princ3.wordpress.com/2007/01/26/automaticaly-save-foldings-in-vim/
@@ -551,12 +542,6 @@ autocmd FileType vim set omnifunc=syntaxcomplete#Complete
 
 "from https://github.com/chronon/dot-vim/blob/master/vimrc
 
-"  " cakephp
-"  autocmd BufEnter,BufRead {controllers,models,views,plugins,lib}/* set ft=php.cakephp
-"  autocmd BufEnter,BufRead {Controller,Model,View,Plugin,Lib}/* set ft=php.cakephp
-"  autocmd FileType php,php.cakephp set commentstring=//\%s
-"  autocmd FileType html set commentstring=<!--%s-->
-
 " http://stackoverflow.com/questions/1747091/how-do-you-use-vims-quickfix-feature
 " autocmd BufWritePost,FileWritePost *.html call JavascriptLint()
 " autocmd BufWritePost,FileWritePost *.jade call JavascriptLint()
@@ -599,9 +584,6 @@ autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.pl :%s/\s\+$//e
 autocmd BufWritePre *.py :%s/\s\+$//e
 
-" tabs, not spaces for php, ctp
-au BufEnter,BufRead *.php,*.ctp setlocal noexpandtab
-
 " Autoclose quickfix windows when quit
 " http://stackoverflow.com/questions/7476126/how-to-automatically-close-the-quick-fix-window-when-leaving-a-file
 aug QFClose
@@ -621,3 +603,24 @@ if has("gui_running")
     highlight DiffChange cterm=none ctermfg=bg ctermbg=Yellow gui=none guifg=bg guibg=Yellow
     highlight DiffText cterm=none ctermfg=bg ctermbg=Magenta gui=none guifg=bg guibg=Magenta
 endif
+
+
+"  PHP stuff
+
+"  " cakephp
+"  autocmd BufEnter,BufRead {controllers,models,views,plugins,lib}/* set ft=php.cakephp
+"  autocmd BufEnter,BufRead {Controller,Model,View,Plugin,Lib}/* set ft=php.cakephp
+"  autocmd FileType php,php.cakephp set commentstring=//\%s
+"  autocmd FileType html set commentstring=<!--%s-->
+
+" tabs, not spaces for php, ctp
+au BufEnter,BufRead *.php,*.ctp setlocal noexpandtab
+
+"  "---- PHP executing shortcut --"
+"  " Execute PHP file being edited with <Shift> + p:
+"  nnoremap P w:<CR>:!/usr/bin/php5 % <CR>
+
+"  " You might also find this useful
+"  " PHP Generated Code Highlights (HTML & SQL)                                              
+"  let php_sql_query=1                                                                                        
+"  let php_htmlInStrings=1
