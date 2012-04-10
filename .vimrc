@@ -27,10 +27,17 @@ imap <C-L> <C-O><C-L>
 :nmap w W
 
 
+" Start visual mode in insert mode
+imap <S-Right> <Esc><Right>v
+imap <S-Left> <Esc>v
+
+
 " Save file if modified
 nmap <F2> :update<CR>
 " Return to insert mode after saving (using <C-O>)
-imap <F2> <C-O><F2>
+" imap <F2> <C-O><F2>
+" Escape insert mode after saving
+imap <F2> <Esc><F2>
 
 
 set nocompatible " be iMproved
