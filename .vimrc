@@ -16,6 +16,11 @@ nmap <C-L> zz
 imap <C-L> <C-O><C-L>
 
 
+" Delete word after the cursor including space after in insert mode
+" Like Emacs Alt+D
+:imap <C-d> <C-[>dwi
+
+
 " Save file if modified
 nmap <F2> :update<CR>
 " Return to insert mode after saving (using <C-O>)
@@ -205,7 +210,8 @@ set showmatch "Show matching bracets when text indicator is over them
 
 " No sound on errors
 set noerrorbells
-set novisualbell
+" Visual bell instead of sound (not to distract colleagues)
+set vb
 set tm=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
