@@ -38,6 +38,9 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+" Rails
+Bundle 'tpope/vim-rails'
+
 " vim-scripts dependency 
 Bundle 'Conque-Shell'
 Bundle 'L9'
