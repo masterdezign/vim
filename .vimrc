@@ -18,10 +18,13 @@ imap <C-L> <C-O><C-L>
 
 " Delete word after the cursor including space after it in insert mode
 " Like Emacs Alt+D
-:imap <C-D> <C-[>dwi
+:imap <C-D> <C-O>dW
 
 " CTRL+K to delete until the end of line
 :imap <C-K> <C-O>D
+
+" Jump by space-separated words
+:nmap w W
 
 
 " Save file if modified
