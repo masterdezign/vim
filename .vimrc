@@ -16,6 +16,12 @@ nmap <C-L> zz
 imap <C-L> <C-O><C-L>
 
 
+" In many terminal emulators the mouse works just fine
+if has('mouse')
+  set mouse=a
+endif
+
+
 " Delete word after the cursor including space after it in insert mode
 " Like Emacs Alt+D
 :imap <C-D> <C-O>dW
