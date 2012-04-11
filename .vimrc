@@ -24,7 +24,11 @@ imap <C-L> <C-O><C-L>
 :imap <C-K> <C-O>D
 
 " Jump by space-separated words
-:nmap w W
+" :nmap w W
+
+
+" Show buffers instead of Ex mode
+:map Q :buffers<CR>
 
 
 " Select words in visual mode with Shift+arrows
