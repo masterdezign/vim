@@ -33,7 +33,7 @@ endif
 " :nmap w W
 
 
-" Show buffers instead of Ex mode
+" List buffers instead of Ex mode
 :map Q :buffers<CR>
 
 
@@ -98,7 +98,7 @@ Bundle 'vim-scripts/snipmate-snippets'
 Bundle "Shougo/neocomplcache"
 
 " Python development
-Bundle 'vim-scripts/Pydiction'
+" Bundle 'vim-scripts/Pydiction'
 " Bundle 'kevinw/pyflakes-vim'
 Bundle 'vim-scripts/django.vim'
 
@@ -539,7 +539,7 @@ endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
+" let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
 
 """" PYTHON STYLE """"
 let python_highlight_all=1 " Enable all plugin's highlighting.
