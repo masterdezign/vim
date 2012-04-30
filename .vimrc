@@ -52,9 +52,37 @@ nmap <F2> :update<CR>
 " Escape insert mode after saving
 imap <F2> <Esc><F2>
 
+" Save file and add it to git
+map <F5> :Gwrite<CR>
+imap <F5> <Esc><F5>
+
+" Write and make
+map <F6> :update<CR>:! make<CR>
+" Escape insert mode and make
+imap <F6> <Esc><F6>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+set lbr
+set tw=500
+
+set ai "Auto indent
+" set si "Smart indet
+set wrap "Wrap lines
+
 
 set nocompatible " be iMproved
 filetype off                   " required!
+
+
+
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -201,21 +229,6 @@ map <leader>e :e! ~/.vimrc<cr>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set smarttab
-
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indet
-set wrap "Wrap lines
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -293,8 +306,8 @@ map <leader>ba :1,300 bd!<cr>
 " Moving tab using CTRL+ the arrows
 map <C-right> :tabnext<CR>
 map <C-left> :tabprevious<CR>
-nmap <C-up> :bn<CR>
-nmap <C-down> :bp<CR>
+nmap <C-up> :tabnew<CR>
+nmap <C-down> :tabclose<CR>
 
 " Tab configuration
 map <leader>tn :tabnew! %<cr>
