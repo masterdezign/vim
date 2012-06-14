@@ -282,10 +282,10 @@ set nobackup
 set nowb
 set noswapfile
 
-set undodir=~/.vim/undodir
-set undofile
-set undolevels=1000 "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+" set undodir=~/.vim/undodir
+" set undofile
+" set undolevels=1000 "maximum number of changes that can be undone
+" set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
@@ -411,7 +411,7 @@ let jslint_command_options = '-conf ~/.vim/jsl.conf -nofilelisting -nocontext -n
 nnoremap <leader>c <CR>:cclose<CR>
 
 " Set autocomplete form 
-set completeopt=menuone,longest,preview
+" set completeopt=menuone,longest,preview
 
 " Enabling Django : https://github.com/robhudson/snipmate_for_django
 autocmd FileType python set ft=python.django " For SnipMate
@@ -474,8 +474,8 @@ autocmd FileType css set sts=2
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
 " insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Folding
 " auto save folding : http://princ3.wordpress.com/2007/01/26/automaticaly-save-foldings-in-vim/
@@ -574,20 +574,20 @@ highlight Pmenu gui=bold
 
 " Configure neocomplcache 
 " http://www.vim.org/scripts/script.php?script_id=2620
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_min_syntax_length = 4 
+" let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_camel_case_completion = 1
+" let g:neocomplcache_enable_auto_select = 1
+" let g:neocomplcache_min_syntax_length = 4 
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown,ctp setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php,ctp setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType vim set omnifunc=syntaxcomplete#Complete
-
+" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown,ctp setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType php,ctp setlocal omnifunc=phpcomplete#CompletePHP
+" autocmd FileType vim set omnifunc=syntaxcomplete#Complete
+" 
 "from https://github.com/chronon/dot-vim/blob/master/vimrc
 
 " http://stackoverflow.com/questions/1747091/how-do-you-use-vims-quickfix-feature
@@ -599,12 +599,12 @@ autocmd FileType vim set omnifunc=syntaxcomplete#Complete
 au BufEnter,Bufread *.mkd,*.md,*.mdown,*.markdown setlocal tw=0
 
 " Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
+" if !exists('g:neocomplcache_omni_patterns')
+"     let g:neocomplcache_omni_patterns = {}
+" endif
 
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
