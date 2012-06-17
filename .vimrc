@@ -1,3 +1,6 @@
+" Alternative to Esc from insert mode
+imap jj <Esc>
+
 " Set 256 colors in terminal
 set t_Co=256 
 
@@ -527,6 +530,9 @@ map <leader><space> :MRU<CR>
 "
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 map <leader>t :NERDTreeToggle<CR>
+
+" Open on single click
+let g:NERDTreeMouseMode=3
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
