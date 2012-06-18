@@ -102,6 +102,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " Rails
 Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
 
 " vim-scripts dependency 
 Bundle 'Conque-Shell'
