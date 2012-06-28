@@ -384,9 +384,10 @@ set t_RV=
 " h and l wrap between lines, cursor keys wrap in insertion mode
 set whichwrap=h,l,~,[,]
 
-" page down with <SPACE>, pageup with - or <BkSpc>
-noremap <Space> <PageDown>
-noremap <BS> <PageUp>
+" Enter insert mode and insert a space
+noremap <Space> i<Space>
+" Delete a word back on backspace 
+noremap <BS> db
 
 " allow <BkSpc> to delete line breaks, start of insertion, and indents
 set backspace=eol,start,indent
