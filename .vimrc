@@ -106,6 +106,9 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+" Surround text
+Bundle 'tpope/vim-surround'
+
 " Rails
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
