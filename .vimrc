@@ -14,6 +14,12 @@ imap <C-A> <C-O><C-A>
 set hidden
 
 
+" make whitespace char visible
+set list!
+" sets listchars to not display an end-of-line character, and to display > for the first character occupied by a tab, and - for any subsequent characters that the tab may occupy
+set listchars=tab:>-
+
+
 " Emacs-style Ctrl+L
 nmap <C-L> zz
 imap <C-L> <C-O><C-L>
@@ -103,6 +109,10 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Rails
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'bbommarito/vim-slim'
+
+" You need to install ack first. Ack is grep-like tool.
+Bundle 'mileszs/ack.vim'
 
 " vim-scripts dependency 
 Bundle 'Conque-Shell'
