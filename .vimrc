@@ -361,7 +361,7 @@ inoremap <C-v> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<ENTER>i<RIGHT>
 " have further <tab>s cycle through the possibilities:
 set wildmode=list:longest,full
 
-set nowrap          " no line wrapping;
+"set nowrap          " no line wrapping;
 set guioptions+=b   " add a horizontal scrollbar to the bottom
 
 "--- search options ------------
