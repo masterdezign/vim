@@ -1,3 +1,7 @@
+autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
+
+map ш i
+
 " Alternative to Esc from insert mode
 imap jj <Esc>
 
@@ -32,8 +36,7 @@ endif
 
 
 " Delete word after the cursor including space after it in insert mode
-" Like Emacs Alt+D
-:imap <C-D> <C-O>dW
+:imap <C-D> <C-O>dw
 
 " CTRL+K to delete until the end of line
 :imap <C-K> <C-O>D
@@ -66,8 +69,10 @@ map <F5> :Gwrite<CR>
 imap <F5> <Esc><F5>
 
 " Write and make
-map <F6> :update<CR>:! make<CR>
-" Escape insert mode and make
+"map <F6> :update<CR>:! make<CR>
+" Run find
+map <F6> :find<SPACE>
+" Escape insert mode 
 imap <F6> <Esc><F6>
 
 
@@ -108,6 +113,9 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " Surround text
 Bundle 'tpope/vim-surround'
+
+" :e sudo:/etc/hosts
+Bundle 'vim-scripts/sudo.vim'
 
 " Rails
 Bundle 'tpope/vim-rails'
