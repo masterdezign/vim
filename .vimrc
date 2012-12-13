@@ -9,9 +9,9 @@ imap jj <Esc>
 set t_Co=256 
 
 
-" Immediate exit CTRL+A
-nmap <C-A> :qa!<CR>
-imap <C-A> <C-O><C-A>
+" Immediate exit CTRL+Q
+nmap <C-Q> :qa!<CR>
+imap <C-Q> <C-O><C-Q>
 
 
 " Lets hide modified buffers
@@ -63,6 +63,10 @@ nmap <F2> :update<CR>
 " imap <F2> <C-O><F2>
 " Escape insert mode after saving
 imap <F2> <Esc><F2>
+
+" Save file if modified (2)
+nmap <C-U> :update<CR>
+imap <C-U> <Esc><C-U>
 
 " Save file and add it to git
 map <F5> :Gwrite<CR>
@@ -329,10 +333,10 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Moving tab using CTRL+ the arrows
-map <C-right> :tabnext<CR>
-map <C-left> :tabprevious<CR>
-nmap <C-up> :tabnew<CR>
-nmap <C-down> :tabclose<CR>
+map <C-a> :tabnext<CR>
+map <C-d> :tabprevious<CR>
+nmap <C-w> :tabnew<CR>
+nmap <C-S> :tabclose<CR>
 
 " Tab configuration
 map <leader>tn :tabnew! %<cr>
