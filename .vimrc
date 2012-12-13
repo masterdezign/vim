@@ -335,14 +335,21 @@ map <leader>ba :1,300 bd!<cr>
 " Moving tab using CTRL+ the arrows
 map <C-a> :tabnext<CR>
 map <C-d> :tabprevious<CR>
-nmap <C-w> :tabnew<CR>
+nmap <C-Y> :tabnew<CR>
 nmap <C-S> :tabclose<CR>
 
+" Simplified window manipulation
+nmap <C-E> <C-W>s
+nmap <leader><Up> <C-W><Up>
+nmap <leader><Down> <C-W><Down>
+nmap <leader><Left> <C-W><Left>
+nmap <leader><Right> <C-W><Right>
+
+" Surround by apos
+nmap <leader>' ysiw'
+
 " Tab configuration
-map <leader>tn :tabnew! %<cr>
-map <leader>te :tabedit 
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+map <leader>n :tabnew<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
