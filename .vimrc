@@ -333,8 +333,8 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Moving tab using CTRL+ the arrows
-map <C-a> :tabnext<CR>
-map <C-d> :tabprevious<CR>
+map <C-a> :tabprevious<CR>
+map <C-d> :tabnext<CR>
 nmap <C-Y> :tabnew<CR>
 nmap <C-S> :tabclose<CR>
 
