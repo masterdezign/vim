@@ -4,6 +4,7 @@ map ш i
 
 " Alternative to Esc from insert mode
 imap jj <Esc>
+map Q ZQ
 
 " Set 256 colors in terminal
 set t_Co=256 
@@ -45,8 +46,8 @@ endif
 " :nmap w W
 
 
-" List buffers instead of Ex mode
-:map Q :buffers<CR>
+" List buffers
+:map gb :buffers<CR>
 
 
 " Select words in visual mode with Shift+arrows
@@ -113,7 +114,10 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Bundle 'vim-scripts/project.vim'
+Bundle 'vim-scripts/taglist.vim'
 
 " Surround text
 Bundle 'tpope/vim-surround'
@@ -136,7 +140,7 @@ Bundle 'L9'
 " Utilities
 Bundle 'tsaleh/vim-matchit.git'
 Bundle 'vim-scripts/tComment'
-Bundle 'Raimondi/delimitMate'
+" Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
 
 "Files manager
@@ -164,7 +168,7 @@ Bundle 'vim-scripts/django.vim'
 "  Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
 "  Bundle 'lukaszb/vim-web-indent'
-Bundle 'mattn/zencoding-vim'
+" Bundle 'mattn/zencoding-vim'
 Bundle 'godlygeek/tabular'
 "  Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'lunaru/vim-less'
@@ -537,7 +541,7 @@ nmap <F7> :NERDTree .<CR>
 " TagBar Configuration
 let g:tagbar_usearrows=1
 let g:tagbar_width=30
-nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>t :TlistToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FuzzFinder Shorcuts. Using F4 for opening FuzzyFinderTextMate
@@ -563,7 +567,7 @@ map <leader><space> :MRU<CR>
 "https://github.com/scrooloose/nerdtree/issues/21
 "
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-map <leader>t :NERDTreeToggle<CR>
+map <leader>r :NERDTreeToggle<CR>
 
 " Open on single click
 let g:NERDTreeMouseMode=3
