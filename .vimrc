@@ -1,6 +1,9 @@
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 
 map ш i
+" No autho chdir
+" Set default environment based on current edited files
+" autocmd BufEnter * silent! lcd %:p:h
 
 " Alternative to Esc from insert mode
 imap jj <Esc>
@@ -264,6 +267,13 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tag list
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let Tlist_Use_SingleClick=1
+let Tlist_Show_Menu=1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set so=7            " Set 7 lines to the curors - when moving vertical..
@@ -371,9 +381,6 @@ set pastetoggle=<F3>          " Press F3 for toggle paste mode
 
 " Paste using ,v in normal mode
 nnoremap <leader>v "+gP
-
-" Set default environment based on current edited files
-autocmd BufEnter * silent! lcd %:p:h
 
 " The best thing here! 
 " In insert mode, you can paste from clipboard using CTRL+v
