@@ -664,7 +664,7 @@ endif
 " for Syntastic
 let g:syntastic_auto_loc_list=1 "Auto open errors window upon detection
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=1
+" let g:syntastic_auto_jump=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_enable_balloons=1 
 
