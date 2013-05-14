@@ -1,4 +1,7 @@
+" set spell spelllang=en_us
+
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
+
 
 map ш i
 " No autho chdir
@@ -7,7 +10,9 @@ map ш i
 
 " Alternative to Esc from insert mode
 imap jj <Esc>
-map Q ZQ
+
+" map Q ZQ
+map Q :bd<cr>
 
 " Set 256 colors in terminal
 set t_Co=256 
@@ -130,8 +135,9 @@ Bundle 'vim-scripts/sudo.vim'
 
 " Rails
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rvm'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'bbommarito/vim-slim'
+Bundle 'slim-template/vim-slim'
 
 " You need to install ack first. Ack is grep-like tool.
 Bundle 'mileszs/ack.vim'
@@ -656,6 +662,24 @@ au BufEnter,Bufread *.mkd,*.md,*.mdown,*.markdown setlocal tw=0
 
 " let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+function RubyEndToken ()
+  let current_line = getline( '.' )
+  let braces_at_end = '{\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+  let stuff_without_do = '^\s*\(class\|if\|unless\|begin\|case\|for\|module\|while\|until\|def\)'
+  let with_do = 'do\s*\(|\(,\|\s\|\w\)*|\s*\)\?$'
+
+  if match(current_line, braces_at_end) >= 0
+    return "\<CR>}\<C-O>O" 
+  elseif match(current_line, stuff_without_do) >= 0
+    return "\<CR>end\<C-O>O" 
+  elseif match(current_line, with_do) >= 0
+    return "\<CR>end\<C-O>O" 
+  else
+    return "\<CR>" 
+  endif
+endfunction
+
+imap <buffer> <CR> <C-R>=RubyEndToken()<CR>
 
 if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
