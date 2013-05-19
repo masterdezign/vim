@@ -307,6 +307,8 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable "Enable syntax hl
 
+map <leader>m :ConqueTermSplit bash<cr>
+
 set shell=/bin/bash
 
 set guioptions-=T
