@@ -2,6 +2,26 @@
 
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader=","
+
+" Close the current buffer
+map <leader>d :bd<cr>
+
+" Close all the buffers
+map <leader>ba :1,300 bd!<cr>
+
+let g:mapleader=","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Fast editing of the .vimrc
+map <leader>e :e! ~/.vimrc<cr>
+
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vimrc
 
 map ш i
 " No autho chdir
@@ -11,8 +31,13 @@ map ш i
 " Alternative to Esc from insert mode
 imap jj <Esc>
 
-" map Q ZQ
-map Q :bd<cr>
+map Q ZQ
+
+" Moving tabs
+map <C-a> :tabprevious<CR>
+map <C-d> :tabnext<CR>
+nmap <C-Y> :tabnew<CR>
+nmap <C-S> :tabclose<CR>
 
 " Set 256 colors in terminal
 set t_Co=256 
@@ -258,21 +283,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 " Set to auto read when a file is changed from the outside
 set autowrite
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader=","
-let g:mapleader=","
-
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" Fast editing of the .vimrc
-map <leader>e :e! ~/.vimrc<cr>
-
-" When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tag list
@@ -350,20 +360,8 @@ map k gk
 
 map <silent> <leader><cr> :nohlsearch<cr>
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-map <leader>ba :1,300 bd!<cr>
-
-" Moving tab using CTRL+ the arrows
-map <C-a> :tabprevious<CR>
-map <C-d> :tabnext<CR>
-nmap <C-Y> :tabnew<CR>
-nmap <C-S> :tabclose<CR>
-
 " Simplified window manipulation
-nmap <C-E> <C-W>s
+nmap <C-E> :new<cr>
 nmap <leader><Up> <C-W><Up>
 nmap <leader><Down> <C-W><Down>
 nmap <leader><Left> <C-W><Left>
