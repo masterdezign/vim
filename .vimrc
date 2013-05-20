@@ -124,6 +124,8 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+" Bundle 'vim-scripts/ShowMarks'
+
 " Bundle 'vim-scripts/project.vim'
 Bundle 'vim-scripts/taglist.vim'
 
@@ -470,23 +472,23 @@ nnoremap <leader>c <CR>:cclose<CR>
 " set completeopt=menuone,longest,preview
 
 " Enabling Django : https://github.com/robhudson/snipmate_for_django
-autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=htmldjango.html " For SnipMate
+" autocmd FileType python set ft=python.django " For SnipMate
+" autocmd FileType html set ft=htmldjango.html " For SnipMate
 
 " Django Tips from https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
-au BufNewFile,BufRead urls.py      setlocal nowrap
-au BufNewFile,BufRead urls.py      normal! zR
-au BufNewFile,BufRead dashboard.py normal! zR
+" au BufNewFile,BufRead urls.py      setlocal nowrap
+" au BufNewFile,BufRead urls.py      normal! zR
+" au BufNewFile,BufRead dashboard.py normal! zR
 
-au BufNewFile,BufRead admin.py     setlocal filetype=python.django
-au BufNewFile,BufRead urls.py      setlocal filetype=python.django
-au BufNewFile,BufRead models.py    setlocal filetype=python.django
-au BufNewFile,BufRead views.py     setlocal filetype=python.django
-au BufNewFile,BufRead settings.py  setlocal filetype=python.django
-au BufNewFile,BufRead settings.py  setlocal foldmethod=marker
-au BufNewFile,BufRead forms.py     setlocal filetype=python.django
-au BufNewFile,BufRead common_settings.py  setlocal filetype=python.django
-au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
+" au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+" au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+" au BufNewFile,BufRead models.py    setlocal filetype=python.django
+" au BufNewFile,BufRead views.py     setlocal filetype=python.django
+" au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+" au BufNewFile,BufRead settings.py  setlocal foldmethod=marker
+" au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+" au BufNewFile,BufRead common_settings.py  setlocal filetype=python.django
+" au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
 
 " 
 " Django Surround https://code.djangoproject.com/wiki/UsingVimWithDjango
@@ -497,11 +499,11 @@ au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
 "   'sf' for a for statement 
 "autocmd VimEnter * xunmap s
 
-let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
-let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
-let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
-let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
-let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
+" let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
+" let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
+" let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
+" let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
+" let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 
 " http://www.brankovukelic.com/post/2091037293/turn-vim-into-powerful-javascript-editor"
 
@@ -639,7 +641,7 @@ highlight Pmenu gui=bold
 " let g:neocomplcache_min_syntax_length = 4 
 
 " Enable omni completion.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 " autocmd FileType html,markdown,ctp setlocal omnifunc=htmlcomplete#CompleteTags
 " autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -694,9 +696,9 @@ endif
 " let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 " let g:syntastic_enable_balloons=1 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 "remove trailing whitespace
 "http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
