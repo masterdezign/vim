@@ -12,8 +12,6 @@ map <leader>d :bd<cr>
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
 
-let g:mapleader=","
-
 " Fast saving
 nmap <leader>w :w!<cr>
 
