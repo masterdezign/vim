@@ -1,5 +1,12 @@
 " set spell spelllang=en_us
 
+set keymap=ukrainian-jcuken
+
+" Default - latin layout
+set iminsert=0
+" Default - latin layout in search mode
+set imsearch=0
+
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 
 " With a map leader it's possible to do extra key combinations
@@ -10,7 +17,7 @@ let mapleader=","
 map <leader>d :bd<cr>
 
 " Close all the buffers
-map <leader>ba :1,300 bd!<cr>
+" map <leader>ba :1,300 bd!<cr>
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -27,7 +34,7 @@ map ш i
 " autocmd BufEnter * silent! lcd %:p:h
 
 " Alternative to Esc from insert mode
-imap jj <Esc>
+imap jj <Esc>:update<cr>
 
 map Q ZQ
 
@@ -679,7 +686,7 @@ function RubyEndToken ()
   endif
 endfunction
 
-imap <buffer> <CR> <C-R>=RubyEndToken()<CR>
+" imap <buffer> <CR> <C-R>=RubyEndToken()<CR>
 
 if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
