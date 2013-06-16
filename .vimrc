@@ -41,7 +41,7 @@ map Q ZQ
 
 " Tab configuration
 map <C-a> :tabprevious<CR>
-map <C-d> :tabnext<CR>
+map <C-e> :tabnext<CR>
 map <leader>n :tabnew<cr>
 
 " Set 256 colors in terminal
@@ -105,9 +105,9 @@ nmap <F2> :update<CR>
 " Escape insert mode after saving
 imap <F2> <Esc><F2>
 
-" Save file if modified (2)
-nmap <C-U> :update<CR>
-imap <C-U> <Esc><C-U>
+" " Save file if modified (2)
+" nmap <C-U> :update<CR>
+" imap <C-U> <Esc><C-U>
 
 " Save file and add it to git
 map <F5> :Gwrite<CR>
