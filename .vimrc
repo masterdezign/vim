@@ -12,6 +12,7 @@ autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.r
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader=","
+let g:EasyMotion_leader_key = '\'
 
 " Close the current buffer
 map <leader>d :bd<cr>
@@ -161,6 +162,8 @@ Bundle 'vim-scripts/taglist.vim'
 
 " Surround text
 Bundle 'tpope/vim-surround'
+" Faster navigation
+Bundle 'Lokaltog/vim-easymotion'
 
 " :e sudo:/etc/hosts
 Bundle 'vim-scripts/sudo.vim'
