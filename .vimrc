@@ -39,11 +39,10 @@ imap jj <Esc>:update<cr>
 
 map Q ZQ
 
-" Moving tabs
+" Tab configuration
 map <C-a> :tabprevious<CR>
 map <C-d> :tabnext<CR>
-nmap <C-Y> :tabnew<CR>
-nmap <C-S> :tabclose<CR>
+map <leader>n :tabnew<cr>
 
 " Set 256 colors in terminal
 set t_Co=256 
@@ -101,6 +100,8 @@ imap <S-Left> <Esc><S-Left>
 nmap <F2> :update<CR>
 " Return to insert mode after saving (using <C-O>)
 " imap <F2> <C-O><F2>
+"
+
 " Escape insert mode after saving
 imap <F2> <Esc><F2>
 
@@ -377,9 +378,6 @@ nmap <leader><Right> <C-W><Right>
 
 " Surround by apos
 nmap <leader>' ysiw'
-
-" Tab configuration
-map <leader>n :tabnew<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
