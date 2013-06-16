@@ -165,6 +165,8 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-surround'
 " Faster navigation
 Bundle 'Lokaltog/vim-easymotion'
+" Sublime, Emacs-like refactoring
+Bundle 'terryma/vim-multiple-cursors'
 
 " :e sudo:/etc/hosts
 Bundle 'vim-scripts/sudo.vim'
