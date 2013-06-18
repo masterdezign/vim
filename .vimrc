@@ -13,6 +13,9 @@ autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.r
 " like <leader>w saves the current file
 let mapleader=","
 let g:EasyMotion_leader_key = '\'
+" Sugar for quickly seeking word
+map gw \w
+map gs \b
 
 " Close the current buffer
 map <leader>d :bd<cr>
