@@ -39,6 +39,12 @@ imap jj <Esc>:update<cr>
 
 map Q ZQ
 
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " Tab configuration
 map <C-a> :tabprevious<CR>
 map <C-e> :tabnext<CR>
@@ -393,7 +399,7 @@ set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
-set pastetoggle=<F3>          " Press F3 for toggle paste mode
+" set pastetoggle=<F3>          " Press F3 for toggle paste mode
 
 " Paste using ,v in normal mode
 nnoremap <leader>v "+gP
