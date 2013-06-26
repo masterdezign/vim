@@ -378,7 +378,6 @@ map k gk
 map <silent> <leader><cr> :nohlsearch<cr>
 
 " Simplified window manipulation
-nmap <C-E> :new<cr>
 nmap <leader><Up> <C-W><Up>
 nmap <leader><Down> <C-W><Down>
 nmap <leader><Left> <C-W><Left>
@@ -763,3 +762,18 @@ au BufEnter,BufRead *.php,*.ctp setlocal noexpandtab
 "  " PHP Generated Code Highlights (HTML & SQL)                                              
 "  let php_sql_query=1                                                                                        
 "  let php_htmlInStrings=1
+"
+
+" Z - cd to recent / frequent directories
+command! -nargs=* Z :call Z(<f-args>)
+function! Z(...)
+  let cmd = 'fasd -d -e printf'
+  for arg in a:000
+    let cmd = cmd . ' ' . arg
+  endfor
+  let path = system(cmd)
+  if isdirectory(path)
+    echo path
+    exec 'cd ' . path
+  endif
+endfunction
