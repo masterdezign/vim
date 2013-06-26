@@ -156,6 +156,8 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+Bundle 'kien/ctrlp.vim'
+
 " Bundle 'vim-scripts/ShowMarks'
 
 " Bundle 'vim-scripts/project.vim'
@@ -563,7 +565,7 @@ nmap <F7> :NERDTree .<CR>
 " TagBar Configuration
 let g:tagbar_usearrows=1
 let g:tagbar_width=30
-nnoremap <leader>t :TlistToggle<CR>
+" nnoremap <leader>t :TlistToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FuzzFinder Shorcuts. Using F4 for opening FuzzyFinderTextMate
@@ -574,6 +576,15 @@ map <leader>b :FufBuffer<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MRU shorcuts
 map <leader><space> :MRU<CR> 
+
+" CtrlP :p
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 """"""""""""""""""""""""""""""""""""""""""""
 " NERDTree : https://github.com/scrooloose/nerdtree.git
