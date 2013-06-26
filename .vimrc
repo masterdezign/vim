@@ -68,12 +68,6 @@ set list!
 " sets listchars to not display an end-of-line character, and to display > for the first character occupied by a tab, and - for any subsequent characters that the tab may occupy
 set listchars=tab:>-
 
-
-" Emacs-style Ctrl+L
-nmap <C-L> zz
-imap <C-L> <C-O><C-L>
-
-
 " In many terminal emulators the mouse works just fine
 if has('mouse')
   set mouse=a
