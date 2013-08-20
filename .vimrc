@@ -583,6 +583,7 @@ map <leader><space> :MRU<CR>
 " CtrlP :p
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
+map <leader>p :CtrlPMixed<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 " set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
