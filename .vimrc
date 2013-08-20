@@ -42,6 +42,12 @@ imap jj <Esc>:update<cr>
 
 map Q ZQ
 
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " Tab configuration
 map <C-a> :tabprevious<CR>
 map <C-e> :tabnext<CR>
@@ -64,12 +70,6 @@ set hidden
 set list!
 " sets listchars to not display an end-of-line character, and to display > for the first character occupied by a tab, and - for any subsequent characters that the tab may occupy
 set listchars=tab:>-
-
-
-" Emacs-style Ctrl+L
-nmap <C-L> zz
-imap <C-L> <C-O><C-L>
-
 
 " In many terminal emulators the mouse works just fine
 if has('mouse')
@@ -158,6 +158,8 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+Bundle 'kien/ctrlp.vim'
 
 " Bundle 'vim-scripts/ShowMarks'
 
@@ -375,7 +377,6 @@ map k gk
 map <silent> <leader><cr> :nohlsearch<cr>
 
 " Simplified window manipulation
-nmap <C-E> :new<cr>
 nmap <leader><Up> <C-W><Up>
 nmap <leader><Down> <C-W><Down>
 nmap <leader><Left> <C-W><Left>
@@ -396,7 +397,7 @@ set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
-set pastetoggle=<F3>          " Press F3 for toggle paste mode
+" set pastetoggle=<F3>          " Press F3 for toggle paste mode
 
 " Paste using ,v in normal mode
 nnoremap <leader>v "+gP
@@ -567,7 +568,7 @@ nmap <F7> :NERDTree .<CR>
 " TagBar Configuration
 let g:tagbar_usearrows=1
 let g:tagbar_width=30
-nnoremap <leader>t :TlistToggle<CR>
+" nnoremap <leader>t :TlistToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FuzzFinder Shorcuts. Using F4 for opening FuzzyFinderTextMate
@@ -578,6 +579,15 @@ map <leader>b :FufBuffer<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MRU shorcuts
 map <leader><space> :MRU<CR> 
+
+" CtrlP :p
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 """"""""""""""""""""""""""""""""""""""""""""
 " NERDTree : https://github.com/scrooloose/nerdtree.git
@@ -760,3 +770,18 @@ au BufEnter,BufRead *.php,*.ctp setlocal noexpandtab
 "  " PHP Generated Code Highlights (HTML & SQL)                                              
 "  let php_sql_query=1                                                                                        
 "  let php_htmlInStrings=1
+"
+
+" Z - cd to recent / frequent directories
+command! -nargs=* Z :call Z(<f-args>)
+function! Z(...)
+  let cmd = 'fasd -d -e printf'
+  for arg in a:000
+    let cmd = cmd . ' ' . arg
+  endfor
+  let path = system(cmd)
+  if isdirectory(path)
+    echo path
+    exec 'cd ' . path
+  endif
+endfunction
