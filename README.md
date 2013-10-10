@@ -1,8 +1,11 @@
 # Installation
 1. Clone the repo.
-2. Edit .vimrc (optional) and link it to $HOME/.vimrc.
-    $ ln -s vim-netbeans/.vimrc ~/.vimrc
-3. Run `$ vim +BundleInstall +qall`.
+2. Edit .vimrc (optional) and link it to $HOME/.vimrc. Link .vim to $HOME.
+    $ ln -s path/to/repo/.vimrc ~/.vimrc
+    $ ln -s path/to/repo/.vim ~/.vim
+3. Install vundle
+    $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+4. Run `$ vim +BundleInstall +qall`.
 
 For more information check .vimrc.
 
