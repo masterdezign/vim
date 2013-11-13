@@ -180,7 +180,7 @@ Bundle 'vim-scripts/sudo.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rvm'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'slim-template/vim-slim'
+" Bundle 'slim-template/vim-slim'
 
 " You need to install ack first. Ack is grep-like tool.
 Bundle 'mileszs/ack.vim'
