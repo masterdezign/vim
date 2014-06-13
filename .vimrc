@@ -116,12 +116,6 @@ imap <F2> <Esc><F2>
 map <F5> :Gwrite<CR>
 imap <F5> <Esc><F5>
 
-" Write and make
-"map <F6> :update<CR>:! make<CR>
-" Run find
-" map <F6> :find<SPACE>
-" Escape insert mode 
-
 map <F6> :update<CR>:!ghc %<CR>
 imap <F6> <Esc><F6>
 
@@ -576,7 +570,7 @@ let g:tagbar_width=30
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FuzzFinder Shorcuts. Using F4 for opening FuzzyFinderTextMate
-map <leader>f :FufFileWithCurrentBufferDir<CR>
+" map <leader>f :FufFileWithCurrentBufferDir<CR>
 map <F4> :FufFileWithFullCwd<CR>
 map <leader>b :FufBuffer<CR>
 
@@ -587,6 +581,7 @@ map <leader><space> :MRU<CR>
 " CtrlP :p
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMixed<CR>
 map <leader>p :CtrlPMixed<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
