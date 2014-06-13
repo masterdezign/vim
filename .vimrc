@@ -119,9 +119,27 @@ imap <F5> <Esc><F5>
 " Write and make
 "map <F6> :update<CR>:! make<CR>
 " Run find
-map <F6> :find<SPACE>
+" map <F6> :find<SPACE>
 " Escape insert mode 
+
+map <F6> :update<CR>:!ghc %<CR>
 imap <F6> <Esc><F6>
+
+" This is from : http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
+"
+
+" Toggle line numbers and fold column for easy copying by Pressing F3
+nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+" Execute Python file being edited with <Shift> + e:
+nnoremap E w:<CR>:!python % <CR>
+
+"  " Execute NodeJS file being edited with <Shift> + n:
+"  nnoremap N w:<CR>:!node %<CR>
+
+" Execute javascriptLint on no-JS files like PHP, python, Html with <Shift> + j : 
+command! JavaScriptLintChecker call JavascriptLint()
+nnoremap J w:<CR>:JavaScriptLintChecker<CR><ENTER><CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -456,21 +474,7 @@ noremap <BS> db
 set backspace=eol,start,indent
 
 
-" This is from : http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
-"
 
-" Toggle line numbers and fold column for easy copying by Pressing F3
-nnoremap <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
-
-" Execute Python file being edited with <Shift> + e:
-nnoremap E w:<CR>:!python % <CR>
-
-"  " Execute NodeJS file being edited with <Shift> + n:
-"  nnoremap N w:<CR>:!node %<CR>
-
-" Execute javascriptLint on no-JS files like PHP, python, Html with <Shift> + j : 
-command! JavaScriptLintChecker call JavascriptLint()
-nnoremap J w:<CR>:JavaScriptLintChecker<CR><ENTER><CR>
 
 " Change jsl.conf in ~/.vim/jsl.conf for customization
 let jslint_command_options = '-conf ~/.vim/jsl.conf -nofilelisting -nocontext -nosummary -nologo -process'
@@ -786,3 +790,6 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
+
+:nnoremap <F10> "=strftime("%d.%m.%Y")<CR>P
+:inoremap <F10> <C-R>=strftime("%d.%m.%Y")<CR>
