@@ -118,6 +118,7 @@ imap <F5> <Esc><F5>
 
 map <F6> :update<CR>:!ghc -Wall -O2 -fforce-recomp % -o %:r && time ./%:r<CR>
 imap <F6> <Esc><F6>
+map gh :!ghc -O2 -fforce-recomp % -o %:r<CR>
 
 " This is from : http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
 "
