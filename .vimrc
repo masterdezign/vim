@@ -174,6 +174,8 @@ Bundle 'tpope/vim-fugitive'
 
 Bundle 'kien/ctrlp.vim'
 
+Bundle 'lervag/vim-latex'
+
 " Bundle 'vim-scripts/ShowMarks'
 
 " Bundle 'vim-scripts/project.vim'
@@ -582,7 +584,7 @@ map <leader><space> :MRU<CR>
 " CtrlP :p
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
-map <leader>f :CtrlPMixed<CR>
+map <leader>f :CtrlP<CR>
 map <leader>p :CtrlPMixed<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
