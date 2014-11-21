@@ -175,14 +175,13 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'lervag/vim-latex'
+Bundle 'Shougo/neocomplete.vim'
 
 " Bundle 'vim-scripts/ShowMarks'
 
 " Bundle 'vim-scripts/project.vim'
 Bundle 'vim-scripts/taglist.vim'
 
-" Surround text
-Bundle 'tpope/vim-surround'
 " Faster navigation
 Bundle 'Lokaltog/vim-easymotion'
 " Sublime, Emacs-like refactoring
