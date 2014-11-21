@@ -172,7 +172,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'vim-scripts/git-time-lapse'
-
+     
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'lervag/vim-latex'
@@ -589,6 +589,9 @@ map <leader>p :CtrlPMixed<CR>
 
 " Git Time Lapse
 map <leader>gt :call TimeLapse() <cr> 
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 " set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
