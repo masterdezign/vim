@@ -171,6 +171,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'vim-scripts/git-time-lapse'
 
 Bundle 'kien/ctrlp.vim'
 
@@ -585,6 +586,9 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlP<CR>
 map <leader>p :CtrlPMixed<CR>
+
+" Git Time Lapse
+map <leader>gt :call TimeLapse() <cr> 
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 " set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
