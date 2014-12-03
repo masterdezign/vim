@@ -117,7 +117,7 @@ Bundle 'vim-scripts/git-time-lapse'
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'lervag/vim-latex'
-Bundle 'Shougo/neocomplete.vim'
+" Bundle 'Shougo/neocomplete.vim'
 
 " Bundle 'vim-scripts/ShowMarks'
 
@@ -164,7 +164,6 @@ Bundle 'godlygeek/csapprox.git'
 "Snipmate
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/snipmate-snippets'
-Bundle "Shougo/neocomplcache"
 
 "  "Javascript
 " Bundle 'kchmck/vim-coffee-script'
@@ -179,9 +178,9 @@ Bundle 'godlygeek/tabular'
 " Bundle 'pangloss/vim-javascript'
 
 " Syntax checking 
-" Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-markdown.git'
-Bundle "briangershon/html5.vim"
+" Bundle "briangershon/html5.vim"
 Bundle "sukima/xmledit"
 Bundle "indentpython.vim"
 
@@ -314,6 +313,10 @@ autocmd FileType html set ts=2
 autocmd FileType html set sts=2
 autocmd FileType html set textwidth=0
 
+" Python (tab width 4 chr)
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+
 " Ruby (tab width 2 chr)
 autocmd FileType ruby set sw=2
 autocmd FileType ruby set ts=2
@@ -366,12 +369,8 @@ autocmd BufRead *.py set nosmartindent cindent " cinwords=if,elif,else,for,while
 
 highlight Pmenu gui=bold
 
-" Configure neocomplcache 
-" http://www.vim.org/scripts/script.php?script_id=2620
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_min_syntax_length = 4 
+" Configure neocomplete
+" let g:neocomplete_enable_at_startup = 1
 
 " markdown
 au BufEnter,Bufread *.mkd,*.md,*.mdown,*.markdown setlocal tw=0
@@ -390,6 +389,8 @@ autocmd BufWritePre *.java :%s/\s\+$//e
 autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.pl :%s/\s\+$//e
 autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.hs :%s/\s\+$//e
+autocmd BufWritePre *.vhd :%s/\s\+$//e
 
 " Autoclose quickfix windows when quit
 " http://stackoverflow.com/questions/7476126/how-to-automatically-close-the-quick-fix-window-when-leaving-a-file
