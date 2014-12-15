@@ -230,10 +230,11 @@ set magic "Set magic on, for regular expressions
 
 set showmatch "Show matching bracets when text indicator is over them
 
-" No sound on errors
-set noerrorbells
-" Visual bell instead of sound (not to distract colleagues)
-set vb
+" " No sound on errors
+" set noerrorbells
+" " Visual bell instead of sound (not to distract colleagues)
+" set vb
+
 set tm=500
 
 syntax enable "Enable syntax hl
