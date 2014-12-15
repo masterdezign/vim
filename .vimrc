@@ -155,7 +155,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'FuzzyFinder'
-Bundle 'vim-scripts/mru.vim'
 
 "Color scheme
 Bundle 'cschlueter/vim-mustang'
@@ -336,15 +335,14 @@ map <leader>r :NERDTreeToggle<CR>
 let g:tagbar_usearrows=1
 let g:tagbar_width=30
 
-" MRU shorcuts
-map <leader><space> :MRU<CR> 
-
 " CtrlP :p
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 map <leader>f :CtrlP<CR>
 map <leader>p :CtrlPMixed<CR>
+map <leader><space> :CtrlPMRU<CR>
+
 " FuzzyFinder
 map <leader>b :FufBuffer<CR>
 
