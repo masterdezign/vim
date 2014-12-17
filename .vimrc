@@ -154,7 +154,6 @@ Bundle 'tpope/vim-surround'
 "Files manager
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
-Bundle 'FuzzyFinder'
 
 "Color scheme
 Bundle 'cschlueter/vim-mustang'
@@ -335,16 +334,14 @@ map <leader>r :NERDTreeToggle<CR>
 let g:tagbar_usearrows=1
 let g:tagbar_width=30
 
-" CtrlP :p
+" CtrlP
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 map <leader>f :CtrlP<CR>
 map <leader>p :CtrlPMixed<CR>
+map <leader>b :CtrlPBuffer<CR>
 map <leader><space> :CtrlPMRU<CR>
-
-" FuzzyFinder
-map <leader>b :FufBuffer<CR>
 
 " Git Time Lapse
 map <leader>gt :call TimeLapse() <cr> 
@@ -414,3 +411,19 @@ endfunction
 
 :nnoremap <F10> "=strftime("%d.%m.%Y")<CR>P
 :inoremap <F10> <C-R>=strftime("%d.%m.%Y")<CR>
+
+function! SuperCleverTab()
+    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+        return "\<Tab>"
+    else
+        if &omnifunc != ''
+            return "\<C-X>\<C-O>"
+        elseif &dictionary != ''
+            return "\<C-K>"
+        else
+            return "\<C-N>"
+        endif
+    endif
+endfunction
+
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>" endif
