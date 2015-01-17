@@ -326,6 +326,9 @@ autocmd FileType css set sw=2
 autocmd FileType css set ts=2
 autocmd FileType css set sts=2
 
+" Syntastic VHDL
+let g:syntastic_vhdl_ghdl_args = '--ieee=synopsys'
+
 " NerdTree and Tagbar
 nmap <F8> :TagbarToggle<CR>
 nmap <F7> :NERDTree .<CR>
