@@ -203,6 +203,7 @@ try
 colorscheme wombat256mod
 catch
 endtry
+
 " Bundle 'godlygeek/csapprox.git'
 " set background=dark
 " let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
@@ -211,6 +212,7 @@ endtry
 " colorscheme mustang
 " catch
 " endtry
+
 " Enable syntax highlighting
 syntax enable
 " Adjust signscolumn and syntastic to match wombat
@@ -344,11 +346,11 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 " don't close buffers when you aren't displaying them
 set hidden
-" previous buffer, next buffer
-nnoremap <leader>bp :bp<cr>
-nnoremap <leader>bn :bn<cr>
+" " previous buffer, next buffer
+" nnoremap <leader>bp :bp<cr>
+" nnoremap <leader>bn :bn<cr>
 " delete buffer without closing pane
-noremap <leader>bd :Bd<cr>
+noremap <leader>d :Bd<cr>
 " }}}
 " Status line {{{
 " Always show the status line
@@ -754,19 +756,3 @@ endfunction
 
 :nnoremap <F10> "=strftime("%d.%m.%Y")<CR>P
 :inoremap <F10> <C-R>=strftime("%d.%m.%Y")<CR>
-
-" function! SuperCleverTab()
-"     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-"         return "\<Tab>"
-"     else
-"         if &omnifunc != ''
-"             return "\<C-X>\<C-O>"
-"         elseif &dictionary != ''
-"             return "\<C-K>"
-"         else
-"             return "\<C-N>"
-"         endif
-"     endif
-" endfunction
-" 
-" inoremap <Tab> <C-R>=SuperCleverTab()<cr>" endif
