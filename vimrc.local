@@ -1,0 +1,57 @@
+" set spell spelllang=en_us
+
+set keymap=ukrainian-jcuken
+
+" Default - latin layout
+set iminsert=0
+" Default - latin layout in search mode
+set imsearch=0
+
+" Fonts
+" set gfn=Monospace\ 8.7
+set gfn=Monospace\ 9.0
+
+" Alternative to Esc from insert mode
+imap jj <Esc>:update<cr>
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Fast editing of the .vimrc
+map <leader>q :e! ~/.vimrc<cr>
+
+" CTRL+K to delete until the end of line in insert mode
+:imap <C-K> <C-O>D
+
+map <leader>f :CtrlP<CR>
+map <leader>p :CtrlPMixed<CR>
+map <leader>b :CtrlPBuffer<CR>
+map <leader><space> :CtrlPMRU<CR>
+
+map Q ZQ
+
+" When pressing <leader>cd switch to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>
+
+" Use UTF-8 as the default buffer encoding
+set enc=utf-8
+
+" Git Time Lapse
+map <leader>gt :call TimeLapse() <cr>
+
+" Open on single click
+let g:NERDTreeMouseMode=3
+
+" Z - cd to recent / frequent directories
+command! -nargs=* Z :call Z(<f-args>)
+function! Z(...)
+  let cmd = 'fasd -d -e printf'
+  for arg in a:000
+    let cmd = cmd . ' ' . arg
+  endfor
+  let path = system(cmd)
+  if isdirectory(path)
+    echo path
+    exec 'cd ' . path
+  endif
+endfunction
