@@ -14,11 +14,16 @@ set gfn=Monospace\ 9.0
 " Alternative to Esc from insert mode
 imap jj <Esc>:update<cr>
 
+" Paste using ,v in normal mode
+nnoremap <leader>v "+gP
+" In insert mode, paste from clipboard using CTRL+v
+inoremap <C-v> <ESC>:set paste<CR>"+gp<ESC>:set nopaste<ENTER>i<RIGHT>
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" Fast editing of the .vimrc
-map <leader>q :e! ~/.vimrc<cr>
+" Fast editing of the .vimrc.local
+map <leader>q :e! ~/.vimrc.local<cr>
 
 " Shortcut to Close quickfix window with leader+c
 nnoremap <leader>c <CR>:cclose<CR>
