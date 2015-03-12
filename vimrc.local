@@ -20,10 +20,15 @@ nmap <leader>w :w!<cr>
 " Fast editing of the .vimrc
 map <leader>q :e! ~/.vimrc<cr>
 
+" Shortcut to Close quickfix window with leader+c
+nnoremap <leader>c <CR>:cclose<CR>
+
 " CTRL+K to delete until the end of line in insert mode
 :imap <C-K> <C-O>D
 
-map <leader>f :CtrlP<CR>
+if has("gui_running")
+  map <leader>f :CtrlP<CR>
+endif
 map <leader>p :CtrlPMixed<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader><space> :CtrlPMRU<CR>
@@ -55,3 +60,45 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
+
+" Remove trailing whitespaces
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
+autocmd BufWritePre *.c :%s/\s\+$//e
+autocmd BufWritePre *.cpp :%s/\s\+$//e
+autocmd BufWritePre *.c++ :%s/\s\+$//e
+autocmd BufWritePre *.h :%s/\s\+$//e
+autocmd BufWritePre *.java :%s/\s\+$//e
+autocmd BufWritePre *.php :%s/\s\+$//e
+autocmd BufWritePre *.pl :%s/\s\+$//e
+autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.vhd :%s/\s\+$//e
+
+" Tag list
+let Tlist_Use_SingleClick=1
+let Tlist_Show_Menu=1
+
+nmap <F8> :TagbarToggle<CR>
+
+" Python (tab width 4 chr)
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+
+" Ignored files
+set wildignore=*.swp,*.pyc,*.class,*.hi,*.o
+
+" Select words in visual mode with Shift+arrows
+nmap <S-Right> ve
+nmap <S-Left> vb
+" Start visual mode in insert mode
+imap <S-Right> <Esc><S-Right>
+imap <S-Left> <Esc><S-Left>
+" Enter insert mode and insert a space
+noremap <Space> i<Space>
+
+" Save file and add it to git
+map <F5> :Gwrite<CR>
+imap <F5> <Esc><F5>
+
+map <F6> :update<CR>:!ghc -Wall -O2 -fforce-recomp % -o %:r && time ./%:r<CR>
+imap <F6> <Esc><F6>
+map gh :!ghc -O2 -fforce-recomp % -o %:r<CR>
