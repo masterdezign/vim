@@ -107,3 +107,10 @@ imap <F5> <Esc><F5>
 map <F6> :update<CR>:!ghc -Wall -O2 -fforce-recomp % -o %:r && time ./%:r<CR>
 imap <F6> <Esc><F6>
 map gh :!ghc -O2 -fforce-recomp % -o %:r<CR>
+
+" Show (partial) commands (or size of selection in Visual mode) in the status line
+set showcmd
+" Round indent to multiple of 'shiftwidth' for > and < commands
+set shiftround
+" Don't request terminal version string (for xterm)
+set t_RV=
