@@ -21,3 +21,5 @@ Bundle 'vim-scripts/snipmate-snippets'
 
 Bundle 'tpope/vim-markdown.git'
 Bundle "indentpython.vim"
+
+Bundle "vim-scripts/Rename"
