@@ -8,8 +8,7 @@ set iminsert=0
 set imsearch=0
 
 " Fonts
-" set gfn=Monospace\ 8.7
-set gfn=Monospace\ 9.0
+set gfn=Monospace\ 8.7
 
 " Alternative to Esc from insert mode
 imap jj <Esc>:update<cr>
@@ -39,6 +38,11 @@ map <leader>b :CtrlPBuffer<CR>
 map <leader><space> :CtrlPMRU<CR>
 
 map Q ZQ
+
+" Tab configuration
+map <C-a> :tabprevious<CR>
+map <C-e> :tabnext<CR>
+map <leader>n :tabnew<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -77,6 +81,8 @@ autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.pl :%s/\s\+$//e
 autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.vhd :%s/\s\+$//e
+autocmd BufWritePre *.md :%s/\s\+$//e
+autocmd BufWritePre *.tex :%s/\s\+$//e
 
 " Tag list
 let Tlist_Use_SingleClick=1
