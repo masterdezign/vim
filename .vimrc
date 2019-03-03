@@ -28,8 +28,8 @@ set tm=1000
 noremap ,, ,
 " Use par for prettier line formatting
 set formatprg="PARINIT='rTbgqR B=.,?_A_a Q=_s>|' par\ -w72"
-" Use stylish haskell instead of par for haskell buffers
-autocmd FileType haskell let &formatprg="stylish-haskell"
+" " Use stylish haskell instead of par for haskell buffers
+" autocmd FileType haskell let &formatprg="stylish-haskell"
 " Find custom built ghc-mod, codex etc
 let $PATH = $PATH . ':' . expand("~/.haskell-vim-now/bin")
 " }}}
@@ -132,7 +132,10 @@ Bundle 'tpope/vim-markdown.git'
 " Bundle "briangershon/html5.vim"
 Bundle "sukima/xmledit"
 Bundle "indentpython.vim"
+
 " End bundles
+
+
 if filereadable(expand("~/.vim.local/bundles.vim"))
 source ~/.vim.local/bundles.vim
 endif
@@ -252,7 +255,7 @@ endtry
 set ffs=unix,dos,mac
 " Use large font by default in MacVim
 " set gfn=Monospace\ 8.7 
-set gfn=Monaco:h19
+" set gfn=Monaco:h19
 " }}}
 " Files, backups and undo {{{
 " Turn backup off, since most stuff is in Git anyway...
