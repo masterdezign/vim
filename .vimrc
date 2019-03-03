@@ -111,7 +111,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'Conque-Shell'
 Bundle 'L9'
 " Utilities
-Bundle 'tsaleh/vim-matchit.git'
 Bundle 'vim-scripts/tComment'
 " Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
