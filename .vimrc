@@ -105,8 +105,7 @@ Bundle 'vim-scripts/sudo.vim'
 " Bundle 'tpope/vim-rvm'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'slim-template/vim-slim'
-" Install ack first. Ack is grep-like tool.
-Bundle 'mileszs/ack.vim'
+" Bundle 'mileszs/ack.vim'
 " vim-scripts dependency 
 Bundle 'Conque-Shell'
 Bundle 'L9'
