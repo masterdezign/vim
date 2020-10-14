@@ -25,6 +25,11 @@ setup_vim() {
   # Prevent the cloned repository from having insecure permissions.
   umask g-w,o-w
 
+  command_exists git || {
+    error "git is not installed"
+      exit 1
+    }
+
   if [ -d $HOME/.vim ]; then
     echo "${BLUE}Backing up old Settings...${RESET}"
     mv $HOME/.vim $HOME/.vim-old
@@ -36,11 +41,6 @@ setup_vim() {
   fi
 
   echo "${BLUE}Cloning Config...${RESET}"
-
-  command_exists git || {
-    error "git is not installed"
-      exit 1
-    }
 
   git clone https://github.com/masterdezign/vim $HOME/.vim || {
     error "git clone of vim config repo failed"
