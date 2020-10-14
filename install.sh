@@ -59,7 +59,7 @@ setup_vim() {
   echo "${BLUE}Installing dependencies...${RESET}"
   vim +BundleInstall +qall
 
-  rm -rf ~/.vim/bundle/snipmate.vim/snippets
+  rm -rf $HOME/.vim/bundle/snipmate.vim/snippets
 
   echo "Done"
   echo
