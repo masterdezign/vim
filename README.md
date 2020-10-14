@@ -1,4 +1,11 @@
 # Installation
+
+## One-Line Installation
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/masterdezign/vim/master/install.sh)"
+
+## Manual Installation
+
 1. Clone the repo.
 2. Edit .vimrc (optional) and link it to $HOME/.vimrc. Link .vim to $HOME.
     $ ln -s path/to/this/repo/.vimrc ~/.vimrc
