@@ -90,7 +90,7 @@ Bundle 'eagletmt/neco-ghc'
 Bundle 'Twinside/vim-hoogle'
 " Custom bundles
 Bundle 'vim-scripts/git-time-lapse'
-Bundle 'lervag/vim-latex'
+" Bundle 'lervag/vim-latex'
 " Bundle 'Shougo/neocomplete.vim'
 " Bundle 'vim-scripts/ShowMarks'
 " Bundle 'vim-scripts/project.vim'
